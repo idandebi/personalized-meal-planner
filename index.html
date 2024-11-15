@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Calorie Calculator</h1>
+        <p>Our calories calculator tool provides users with personalized recommendations for daily calorie and protein intake based on their specific fitness goals, whether it’s cutting, bulking, or maintenance.</p>
+
+        <form id="calorie-form">
+            <label for="weight">Weight:</label>
+            <select id="weight-unit">
+                <option value="lbs">lbs</option>
+                <option value="kg">kg</option>
+            </select>
+            <input type="text" id="weight" name="weight">
+
+            <label for="height">Height:</label>
+            <select id="height-unit">
+                <option value="feet">ft</option>
+                <option value="cm">cm</option>
+            </select>
+            <input type="text" id="height" name="height">
+
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age">
+
+            <label for="activity">Activity level:</label>
+            <select id="activity" name="activity">
+                <option value="1.2">Sedentary (1.2)</option>
+                <option value="1.375">Lightly active (1.375)</option>
+                <option value="1.55">Moderately active (1.55)</option>
+                <option value="1.725">Very active (1.725)</option>
+                <option value="1.9">Extremely active (1.9)</option>
+            </select>
+
+            <label for="goal">Goal:</label>
+            <label><input type="radio" name="goal" value="cutting" checked> Cutting</label>
+            <label><input type="radio" name="goal" value="bulking"> Bulking</label>
+            <label><input type="radio" name="goal" value="maintenance"> Maintenance</label>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        <div id="result"></div>
+
+        <!-- כפתור הצג תפריט שיופיע רק לאחר החישוב -->
+        <button id="show-menu-button" style="display:none;">Show Menu</button>
+        <button id="show-meal-selection-button" style="display:none;">Build Custom Menu</button> <!-- New button for custom menu -->
+        <!-- שדות מוסתרים לאחסון הנתונים לפני שליחה לשרת -->
+        <input type="hidden" id="recommendedCalories">
+        <input type="hidden" id="proteinIntake">
+
+        <!-- הצגת התפריט המומלץ -->
+        <div id="menu-result"></div>
+
+        <!-- Meal selection form -->
+        <form id="meal-selection-form" style="display:none;">
+            <h3>Select Your Meals</h3>
+
+            <label>Breakfast Options:</label>
+            <div id="breakfast-options"></div> <!-- Div for dynamically added breakfast options -->
+
+            <label>Lunch Options:</label>
+            <div id="lunch-options"></div> <!-- Div for dynamically added lunch options -->
+
+            <label>Dinner Options:</label>
+            <div id="dinner-options"></div> <!-- Div for dynamically added dinner options -->
+
+            <label>Snack Options:</label>
+            <div id="snack-options"></div> <!-- Div for dynamically added snack options -->
+
+            <button type="submit">Submit Meal Selection</button>
+        </form>
+
+        <!-- הוסף קישור לדף צור קשר -->
+        <div>
+            <h2><a href="contact.html">Contact Us</a></h2>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
