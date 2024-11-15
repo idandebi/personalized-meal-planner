@@ -57,7 +57,7 @@ A web-based application that calculates daily calorie and protein requirements b
 
 ## 📂 Project Structure
 ```
-calorie-calculator/
+personalized-meal-planner/
 ├── app.py           # Flask backend logic
 ├── menu1.py         # Meal plan generation script
 ├── index.html       # Main calculator page
